@@ -9,5 +9,6 @@ RUN apt-get update \
         openmpi-bin \
         openmpi-common \
         libopenmpi-dev
-
-RUN conda env update -f internal.yaml
+ADD internal.yaml /tmp/internal_extinction.yaml
+RUN conda env update -f /tmp/internal_extinction.yaml
+RUN git clone https://github.com/rosafilgueira/dispel4py_workflows.git
