@@ -4,4 +4,4 @@ dependencies:
    - requests
    - astropy
    - pip:
-     - "git+git://github.com/sirspock/dispel4py.git@master"
+     - "git+git://github.com/sirspock/dispel4py.git@devel"
