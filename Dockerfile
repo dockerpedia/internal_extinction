@@ -11,7 +11,8 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-url="https://github.com/dockerpedia/internal_extinction" \
       org.label-schema.vendor="DockerPedia" \
       org.label-schema.version="1.0" \
-      org.label-schema.schema-version="1.0"
+      org.label-schema.schema-version="1.0" \
+      org.label-schema.docker.cmd="docker run -ti --name internal-extinction dockerpedia/internal_extinction:latest bash"
 
 RUN apt-get update \
     && apt-get install -y wget \
@@ -21,6 +22,7 @@ RUN apt-get update \
         openmpi-bin \
         openmpi-common \
         libopenmpi-dev
+
 ADD internal.yaml /tmp/internal_extinction.yaml
 RUN conda env update -f /tmp/internal_extinction.yaml
 RUN git clone https://github.com/rosafilgueira/dispel4py_workflows.git
