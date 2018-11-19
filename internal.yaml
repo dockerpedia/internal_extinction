@@ -1,7 +1,7 @@
 name: base
 channels:
 dependencies:
-   - requests
-   - astropy
+   - requests==2.20.0
+   - astropy==2.0.9
    - pip:
      - "git+git://github.com/sirspock/dispel4py.git@devel"
